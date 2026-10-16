@@ -236,7 +236,7 @@ async def payment_choice_handler(update: Update, context: ContextTypes.DEFAULT_T
             f"💵 To'lov turi: {pay_type_name}"
         )
 
-        await context..bot.send_message(chat_id=ADMIN_ID, text=admin_text, parse_mode="Markdown")
+        await context.bot.send_message(chat_id=ADMIN_ID, text=admin_text, parse_mode="Markdown")
         await context.bot.send_location(chat_id=ADMIN_ID, latitude=lat, longitude=lon)
 
         confirm_msg = (

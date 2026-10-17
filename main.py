@@ -310,11 +310,13 @@ async def admin_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         await query.edit_message_caption(caption=query.message.caption + "\n\n🟢 TASDIQLANDI / ПОДТВЕРЖДЕНО")
 
+
         await query.edit_message_caption(caption=query.message.caption + "\n\n🟢 **TASDIQLANDI / ПОДТВЕРЖДЕНО**")
 
     elif action == "reject":
         msg = (
-            "❌ To'lovingiz tasdiqlanmadi. Iltimos, chekni qaytadan tekshirib ko'ring yoki admin bilan bog'laning."
+            await query.edit_message_caption(caption=query.message.caption + "\n\n🔴 RAD ETILDI / ОТКЛОНЕНО")
+
             await query.edit_message_caption(caption=query.message.caption + "\n\n🔴 RAD ETILDI / ОТКЛОНЕНО")
 
             "❌ Ваша оплата не подтверждена. Пожалуйста, проверьте чек еще раз или свяжитесь с админом."

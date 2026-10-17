@@ -2,7 +2,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, Keyboar
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, CallbackQueryHandler, MessageHandler, filters
 import os
 
-TOKEN = os.getenv("TOKEN")
+TOKEN = os.getenv("TOKEN")8890645496:AAG5bHCIQuCUyW7qHS0nkIXRm4upww_KbOk
 
 # /start komandasi
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):

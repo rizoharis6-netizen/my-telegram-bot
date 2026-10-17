@@ -1,4 +1,4 @@
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardRemove
+from  import Update, InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardRemove
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, CallbackQueryHandler, filters, ContextTypes
 
 # Token va Admin ID
@@ -308,13 +308,15 @@ async def admin_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             if user_lang == "uz" else
             "✅ Ваш заказ и оплата подтверждены! Попкорн готовится и будет доставлен в течение 6 часов! 🍿"
         )
-        await context.bot.send_message(chat_id=user_id, text=msg)
+        await query.edit_message_caption(caption=query.message.caption + "\n\n🟢 TASDIQLANDI / ПОДТВЕРЖДЕНО")
+
         await query.edit_message_caption(caption=query.message.caption + "\n\n🟢 **TASDIQLANDI / ПОДТВЕРЖДЕНО**")
 
     elif action == "reject":
         msg = (
             "❌ To'lovingiz tasdiqlanmadi. Iltimos, chekni qaytadan tekshirib ko'ring yoki admin bilan bog'laning."
-            if user_lang == "uz" else
+            await query.edit_message_caption(caption=query.message.caption + "\n\n🔴 RAD ETILDI / ОТКЛОНЕНО")
+
             "❌ Ваша оплата не подтверждена. Пожалуйста, проверьте чек еще раз или свяжитесь с админом."
         )
         await context.bot.send_message(chat_id=user_id, text=msg)
